@@ -1,1 +1,1 @@
-da
+The Driver is a graphical user interface (GUI) where the user can use the Optimized Solar Panel System. The GUI enables port and potpin selection. The GUI also as two modes for controlling the system, manual and automatic. When the system is in manual mode, the user enter values to position the Position System. When the system in in automatic mode, the Adjustment System (AS) will calculate how to decide and move automatically. 
