@@ -1,0 +1,1 @@
+The Positioning System (PS) is the mechanical method for positioning the solar panel. The PS is made up of two servos, the arm servo controls the angle the solar panel and Light Intensity System (LIS) is pointed and the base servo controls the rotational angle of the solar panel and LIS.
