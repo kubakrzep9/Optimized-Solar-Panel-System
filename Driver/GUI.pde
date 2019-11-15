@@ -40,25 +40,25 @@ class GUI_Settings extends Display_Functions{
     background(247, 247, 247);   
     surface.setSize(GUI_WIDTH, GUI_HEIGHT);
     
-    int servo_y = 50;
-    display_text("Position System", 130, 20, CENTER, fonts.get(2));
+    int servo_y = 210;
+    display_text("Position System", 130, 180, CENTER, fonts.get(2));
     display_text("Arm", 110, servo_y, CENTER, fonts.get(3));
     display_text("Base", 112, servo_y+25, CENTER, fonts.get(3));
     display_text(arm_angle,  150, servo_y, CENTER, fonts.get(3));
     display_text(base_angle, 150, servo_y + 25, CENTER, fonts.get(3));  
    
-    int sensor_y = 180;
-    display_text("Light Intensity System", 130, 150, CENTER, fonts.get(2));
+    int sensor_y = 50;
+    display_text("Light Intensity System", 130, 20, CENTER, fonts.get(2));
     display_text("Front",   115, sensor_y,    CENTER, fonts.get(3));
     display_text("Central", 115, sensor_y+40, CENTER, fonts.get(3));
     display_text("Left",    30,  sensor_y+40, CENTER, fonts.get(3));
     display_text("Right",   200, sensor_y+40, CENTER, fonts.get(3));
     display_text("Back",    115, sensor_y+80, CENTER, fonts.get(3));
-    display_text(formatted_intensities[3], 150, sensor_y,    CENTER, fonts.get(3));
+    display_text(formatted_intensities[1], 150, sensor_y,    CENTER, fonts.get(3));
     display_text(formatted_intensities[0], 150, sensor_y+40, CENTER, fonts.get(3));
-    display_text(formatted_intensities[1], 65,  sensor_y+40, CENTER, fonts.get(3));
-    display_text(formatted_intensities[2], 235, sensor_y+40, CENTER, fonts.get(3));
-    display_text(formatted_intensities[4], 150, sensor_y+80, CENTER, fonts.get(3));
+    display_text(formatted_intensities[3], 65,  sensor_y+40, CENTER, fonts.get(3));
+    display_text(formatted_intensities[4], 235, sensor_y+40, CENTER, fonts.get(3));
+    display_text(formatted_intensities[2], 150, sensor_y+80, CENTER, fonts.get(3));
   }
 
   // Displays the options screen. The options screen displays each servo and sensors pin. Will also 

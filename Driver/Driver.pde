@@ -20,8 +20,8 @@ int ERROR_VAL = -9999;
 
 ArrayList <PFont> fonts;
 GUI_Settings gui;
-Position_System ps;
 Light_Intensity_System lis;
+Position_System ps;
 Adjustment_System as; 
 Widgets w;
 int menu_choice = 0;
@@ -34,9 +34,9 @@ void setup(){
   fonts.add(createFont("Liberation Sans bold", 13));  // font for text
   fonts.add(createFont("Liberation Sans bold", 10));  // font for button text
   
-  ps = new Position_System();
   lis = new Light_Intensity_System();
-  as = new Adjustment_System();
+  ps = new Position_System();
+  as = new Adjustment_System(lis, ps);
   gui = new GUI_Settings(ps, lis);
   w = new Widgets(this);  
   w.init_main_menu();

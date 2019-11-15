@@ -29,19 +29,22 @@ class Light_Intensity_System extends Adjustment_System{
     
     int _pins[] = {10, 11, 12, 13, 14};
     set_pins(_pins);
+    
+    int vals[] = {1,2,3,4,5};
+    set_intensities(vals);
   }
   
   // Tries to connect the serial port to port. If it fails it will print an error message. 
-  boolean connect_serial_port(PApplet parent){
+  String connect_serial_port(PApplet parent){
+    String status;
     try{ // Try to connect to port portConnection 
       this.serial_port = new Serial(parent, port, 9600); 
-      println("[LIS] Connected to port: " + port);
-      return true;
+      status = "[LIS] Connected to port: " + port;
     } 
     catch( Exception e){ // If failed, display error message
-      println("[LIS] Error connecting to port: " + port); 
-      return false;
+      status = "[LIS] Error connecting to port: " + port; 
     }
+    return status;
   }
   
   // Returns the last highest sensor
@@ -96,8 +99,9 @@ class Light_Intensity_System extends Adjustment_System{
   
   // Display function to print the intensity values to the console.  
   void print_intensities(){ 
+    String names[] = {"Central", "Front", "Back", "Left", "Right"};
     println("Printing intensities");
-    for(int i=0; i<num_sensors; i++){ println(intensities[i]); }
+    for(int i=0; i<num_sensors; i++){ println(names[i] +": "+intensities[i]); }
   }
   
 }

@@ -16,19 +16,24 @@ class Position_System{
    private String port = "not set";
    private boolean port_connected = false;
    
+   Position_System(){
+     int vals[] = {30, 60};
+     set_servo_angles(vals); 
+   }
+   
    // Returns the serial port to communicate with the Arduino PS.
    Serial get_serial_port(){ return serial_port; } 
    // Tries to connect the serial port to port. If it fails it will print an error message. 
-   boolean connect_serial_port(PApplet parent){
+   String connect_serial_port(PApplet parent){
+   String status;
     try{ // Try to connect to port portConnection 
       this.serial_port = new Serial(parent, port, 9600); 
-      println("[PS] Connected to port: " + port);
-      return true;
+      status = "[PS] Connected to port: " + port;
     } 
     catch( Exception e){ // If failed, display error message
-      println("[PS] Error connecting to port: " + port); 
-      return false;
+      status = "[PS] Error connecting to port: " + port; 
     }
+    return status;
   }
    
    // Sets the servo angle measures.
@@ -53,4 +58,9 @@ class Position_System{
    // Returns the index of the port in the drop down port selection list.
    int get_port_index(){ return port_index; }    
    
+   void print_angles(){
+     println("PS Angle Measures");
+     println("Arm: " + servo_angles[0]);
+     println("Base: " + servo_angles[1]);
+   }
 }

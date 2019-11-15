@@ -18,6 +18,7 @@ void serialEvent(Serial port){
    
     // To view instruction received by GUI uncomment println below. 
     //println("RECEIVED: " + message);
+    w.println_message_box("Received: " + message);
     instructionInterpretter(message);
   }
 }
@@ -25,7 +26,7 @@ void serialEvent(Serial port){
 // Tries to send an instruction by writting the instruction to the serial port. 
 void send_instruction(String instruction, Serial port){
   try{ port.write(instruction); }
-  catch(Exception e){ println("Can't sent instruction"); }
+  catch(Exception e){ println("Can't sent instruction"); w.println_message_box("ERROR: Can't sent instruction"); }
 }
 
 // When an instruction is received it is sent to the instruction interpretter, where it will be parsed
@@ -35,7 +36,7 @@ void instructionInterpretter(String instruction){
   String parsed_instruction[] = instruction.split(" "); //<>//
     if(parsed_instruction[0].equals("LIS_lightIntensities")){ //<>//
       int data[] = extract_instruction_data(parsed_instruction);
-      if(data[0] == ERROR_VAL){ println("Instruction datatype error (Corrupt data?)"); return;  }
+      if(data[0] == ERROR_VAL){ println("Instruction datatype error (Corrupt data?)"); w.println_message_box("ERROR: Instruction datatype error (Corrupt data?)"); return;  }
       
       lis.set_intensities(data);
       if(lis.get_auto_flag()){ auto_mode(); }

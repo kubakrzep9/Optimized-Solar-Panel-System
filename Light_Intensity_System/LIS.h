@@ -9,10 +9,10 @@
 class Light_Intensity_System{
   private:
     // members
-    static const int num_servos = 5; // Must be const static
-    int pins[num_servos]              = {A0, A1, A2, A3, A4}; // [0]c, [1]f, [2]b, [3]l, [4]r
-    int light_intensities[num_servos] = {0, 0, 0, 0, 0};     
-    String sensor_names[num_servos]   = {"central", "front", "back", "left", "right"}; 
+    static const int num_sensors = 5; // Must be const static
+    int pins[num_sensors]              = {A0, A1, A2, A3, A4}; // [0]c, [1]f, [2]b, [3]l, [4]r
+    int light_intensities[num_sensors] = {0, 0, 0, 0, 0};     
+    String sensor_names[num_sensors]   = {"central", "front", "back", "left", "right"}; 
 
     // methods
     void light_intensity_function();
@@ -31,7 +31,7 @@ class Light_Intensity_System{
 // Returns each sensors light intensity as an array. The light intensities are found
 // by reading the analog value of each sensor pin. 
 void Light_Intensity_System::get_intensities(int intensity_values[]){
-  for(int i=0; i<num_servos; i++){ intensity_values[i] = analogRead(pins[i]); }
+  for(int i=0; i<num_sensors; i++){ intensity_values[i] = analogRead(pins[i]); }
 }
 
 // Helper function to print an integer array with _size elements
@@ -43,7 +43,7 @@ void print_array(int _array[], int _size){
 // has an instructionID "LIS_lightIntensities" followed by the intensity values. Each token of the
 // instruction is seperated by a space " ".  
 String Light_Intensity_System::get_lightIntensities_instruction(){
-  int intensity_values[num_servos] = {0,0,0,0,0};
+  int intensity_values[num_sensors] = {0,0,0,0,0};
   get_intensities(intensity_values);
   String instruction = "LIS_lightIntensities "+String(intensity_values[0])+" "+String(intensity_values[1])
                                           +" "+String(intensity_values[2])+" "+String(intensity_values[3])
@@ -64,7 +64,7 @@ int Light_Intensity_System::get_pin(String _name){
 
 // Sets all the sensor pins in the system.
 void Light_Intensity_System::set_pins(int _pins[]){
-  for(int i=0; i<num_servos; i++){ 
+  for(int i=0; i<num_sensors; i++){ 
     pins[i] = _pins[i]; 
     pinMode(pins[i], INPUT); 
   }

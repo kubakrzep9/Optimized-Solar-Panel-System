@@ -20,6 +20,8 @@ class Widgets extends GUI_Settings {
   private ArrayList<String> ps_pin_input_fields;
   private ArrayList<String> lis_pin_input_fields;
   
+  private String message_box_text = "";
+  
   Widgets(final PApplet parent){
     theParent = parent;
     servo_angle_input_fields = new ArrayList<String>();
@@ -74,9 +76,9 @@ class Widgets extends GUI_Settings {
       .hide()                             
     ;
 
-    // Submission button to send servo angle measures in manual mode
+    // Submission button to send servo angle measures in manual mode                            // MOVE BUTTON //
     widget_control.addButton("move")       
-      .setPosition(manual_servo_entry_x, 90)              
+      .setPosition(manual_servo_entry_x, 250)              
       .setSize(35, 15)                    
       .setFont(fonts.get(3))              
       .hide()                             
@@ -98,25 +100,29 @@ class Widgets extends GUI_Settings {
       .hide()                             
     ;
     
-   // /***********************************/
-   // /***** Main screen message box *****/
-   // /***********************************/
-   // message_box = new Textarea(widget_control, "message box");
-   // message_box.setPosition(100,100)
-   //  .setSize(100,100)
-   //  .hide()
-   //  .setColorBackground(0xffffffff)
-   //  .setColor(0)
-   //  .getCaptionLabel().setVisible(false)
-   //;
-    
+    /***********************************/
+    /***** Main screen message box *****/
+    /***********************************/
+    //message_box = new Textarea(widget_control, "message box")                        // message box //
+    message_box = widget_control.addTextarea("message box")
+     .setPosition(310,15)
+     .setSize(270,230)
+     .show()
+     .setLineHeight(16)
+     .setColor(color(0))
+     //.setColor(color(128))
+     //.setColorBackground(color(255, 100))
+     //.setColorForeground(color(255, 100))
+     .setColorBackground(0xffffffff)
+   ;
+     
     
     /***********************************************/
     /***** Input texfields for Servo data entry ****/
     /***********************************************/
     
     int input_xCoord = manual_servo_entry_x;
-    int input_yCoord = 40;
+    int input_yCoord = 200;
     int input_width  = 35;
     int input_height = 15;
     
@@ -240,6 +246,14 @@ class Widgets extends GUI_Settings {
     ddl.setColorActive(color(255, 128));
   }
   
+  // Appends text to the end of the text area. text must be a string without "\n". 
+  // println_message_box will append a newline char at the end of the text. 
+  public void println_message_box(String text){ 
+    message_box_text += text + "\n";
+    message_box.setText(message_box_text);  
+  }
+  
+  // Initializing main menu widgets.
   public void init_main_menu(){
     showElements("auto");
     showElements("manual");
@@ -248,6 +262,7 @@ class Widgets extends GUI_Settings {
     showElements("manual move");
     showElements("move");
     showElements("message box");
+    message_box.scroll(1);
   }
   
   // Move element to desired xy coordinate 
@@ -274,7 +289,7 @@ class Widgets extends GUI_Settings {
       widget_control.getController("port 1").show();
       widget_control.getController("port 2").show();
     }
-    //if(name == "message box"){ widget_control.getController("message box").show(); }
+    if(name == "message box"){ message_box.show(); }
   }
 
   // Convenience function to easily hide any and all GUI element or groups of elements (buttons, input fields). 
@@ -295,7 +310,7 @@ class Widgets extends GUI_Settings {
       widget_control.getController("port 1").hide();
       widget_control.getController("port 2").hide();
     }
-    // if(name == "message box" || name == "all"){ widget_control.getController("message box").hide(); }
+    if(name == "message box" || name == "all"){ message_box.hide(); }
   }
   
   // Returns item from DropDownList at a specific index

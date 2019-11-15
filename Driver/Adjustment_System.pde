@@ -7,6 +7,17 @@
 
 
 class Adjustment_System{
+  private Light_Intensity_System lis;
+  private Position_System ps;
+  
+  Adjustment_System(){ }
+  
+  Adjustment_System(Light_Intensity_System _lis, Position_System _ps){
+    lis = _lis;
+    ps = _ps;
+  }
+  
+  
   // Moves to a specified position based on the name of the sensor with the highest light intensity.
   // The name is calculated using the 'calculate_highest_intensity_sensor' function from the GUI LIS. 
   int[] calculate_adjustment_angles(String highest_sensor){

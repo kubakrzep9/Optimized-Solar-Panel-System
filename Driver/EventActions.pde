@@ -15,6 +15,7 @@ void home(){
 void move(){
  String instruction = get_instruction("servo angle input fields", "PS_moveSystem");
  println(instruction);
+ w.println_message_box("Sending: " + instruction);
  send_instruction(instruction, ps.get_serial_port());
 }
 
@@ -23,23 +24,32 @@ void ports(){
  int lis_index = lis.get_port_index();
  if(lis_index == ps.get_port_index()){
      if(!(lis_index == 0)){
-       println("CAN'T CONNECT BOTH SYSTEMS TO ONE PORT");
+       String error_text = "Can't connect both systems to one port";
+       println(error_text);
+       w.println_message_box("Error: " + error_text);
        return;
      }
   }else{
-       println("LIS Port: " + lis.get_port());
-       println("PS Port: " + ps.get_port());
+       String lis_port = "LIS Port: " + lis.get_port();
+       String ps_port = "PS Port: " + ps.get_port();
+       w.println_message_box(lis_port);
+       w.println_message_box(ps_port);
   }
   
-  lis.connect_serial_port(this); 
-  ps.connect_serial_port(this);
+  String lis_port_status = lis.connect_serial_port(this);
+  String ps_port_status = ps.connect_serial_port(this);
+  w.println_message_box(lis_port_status);
+  w.println_message_box(ps_port_status);
+  println(lis_port_status);
+  println(ps_port_status);
 }
 
 // Sets the pins for the LIS and PS. All pins must be unique. 
 void pins(){
  String instruction1 = get_instruction("ps pin input fields", "ps_setPins");
  String instruction2 = get_instruction("lis pin input fields", "lis_setPins");
-  
+ 
+ w.println_message_box("PINS INSTRUCTION NOT FINISHED");
  println("NOT FINISHED");
  println(instruction1);
  println(instruction2);
@@ -53,12 +63,14 @@ void options(){
   w.showElements("ports");
   w.showElements("ps pins");
   w.showElements("lis pins");
-  w.close_port_drop_downs();
+  w.close_port_drop_downs();  
 }
 
 // Toggles auto mode.
 void auto(){
-  println("Auto mode activated");
+  String auto_text = "Auto mode activated";
+  println(auto_text);
+  w.println_message_box(auto_text);
   lis.set_auto_flag(true);
   w.hideElements("move");
   w.hideElements("manual move");
@@ -66,7 +78,9 @@ void auto(){
 
 // Toggles manual mode. 
 void manual(){  
-  println("Manual mode activated");
+  String manual_text = "Manual mode activated"; 
+  println(manual_text);
+  w.println_message_box(manual_text);
   lis.set_auto_flag(false);
   w.showElements("move");
   w.showElements("manual move");
