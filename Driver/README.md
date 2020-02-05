@@ -5,9 +5,9 @@ The Driver is a graphical user interface where the user can use the Optimized So
 </p>
 
 <p align="center">
-  <img width="512" height="512" src="https://user-images.githubusercontent.com/44120038/73873277-e9f74c00-4816-11ea-8f0f-a90fb2f94896.png">
+  <img src="https://user-images.githubusercontent.com/44120038/73873277-e9f74c00-4816-11ea-8f0f-a90fb2f94896.png">
 </p>
 
 <p align="center">
-  <img width="512" height="512" src="https://user-images.githubusercontent.com/44120038/73873278-ea8fe280-4816-11ea-9735-08564c1c0177.png">
+  <img src="https://user-images.githubusercontent.com/44120038/73873278-ea8fe280-4816-11ea-9735-08564c1c0177.png">
 </p>
