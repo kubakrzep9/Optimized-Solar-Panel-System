@@ -11,5 +11,5 @@ The Optimized Solar Panel System can be interfaced with the Driver which display
 
 <p align="center"><br></br>Optimized Solar Panel System</p>
 <p align="center"> 
-  <img src="https://user-images.githubusercontent.com/44120038/73873278-ea8fe280-4816-11ea-9735-08564c1c0177.png">
+  <img src="https://user-images.githubusercontent.com/44120038/73875120-5758ac00-481a-11ea-99c2-51128fea1c9c.jpg">
 </p>
