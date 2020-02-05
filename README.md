@@ -4,8 +4,12 @@ The Optimized Solar Panel System uses a motorized base and photosensitive module
 
 The Optimized Solar Panel System can be interfaced with the Driver which displays relevant information about each system. The Driver gives the user the ability to set each system's port and the pin of each sensor the systems are using. There are two modes the user can select from. Manual mode allows the user to enter each servo's angle measure. Auto mode uses the Adjustment System (contained in the driver) to calculate how to reposition the entire system based upon current sensor readings from the Position system. 
 
-<p align="center"><br></br>Manual Mode</p>
+<p align="center"><br></br>Home Screen</p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44120038/73873278-ea8fe280-4816-11ea-9735-08564c1c0177.png">
 </p>
 
+<p align="center"><br></br>Optimized Solar Panel System</p>
+<p align="center"> 
+  <img src="https://user-images.githubusercontent.com/44120038/73873278-ea8fe280-4816-11ea-9735-08564c1c0177.png">
+</p>
