@@ -2,5 +2,10 @@ The Light Intensity System (LIS) is the light intensity detection method for the
 
 <p align="center"><br></br></p>
 <p align="center"> 
+  <img src="https://user-images.githubusercontent.com/44120038/73876728-1ada7f80-481d-11ea-8a0b-e17956cb6eee.jpg">
+</p>
+
+<p align="center"><br></br></p>
+<p align="center"> 
   <img src="https://user-images.githubusercontent.com/44120038/73876251-4dd04380-481c-11ea-9dbc-9c9446cb5261.png">
 </p>
