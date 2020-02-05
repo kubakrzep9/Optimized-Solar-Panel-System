@@ -9,8 +9,3 @@ The Position System (PS) is the mechanical method for positioning the solar pane
 <p align="center"> 
   <img src="https://user-images.githubusercontent.com/44120038/73876244-4c068000-481c-11ea-8ccf-a85948f9e018.png">
 </p>
-
-<p align="center"><br></br></p>
-<p align="center"> 
-  <img src="https://user-images.githubusercontent.com/44120038/73876251-4dd04380-481c-11ea-9dbc-9c9446cb5261.png">
-</p>
