@@ -9,7 +9,7 @@ The Driver is a graphical user interface where the user can use the Optimized So
 </p>
 
 
-<p> Options Menu </p>
+<p align="center"> Options Menu <br></br></p>
 <p align="center">
   <img src="https://user-images.githubusercontent.com/44120038/73873276-e9f74c00-4816-11ea-812f-a13cb7a7ad5c.png">
 </p>
